@@ -1,16 +1,98 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Software Engineering: Project Management
+%% CMMI: Project Monitoring and Control
+%%
+%% Yannick Drost, Tobias Stoll, Dominik Schreiber
+%% winter term 2012/2013, TU Darmstadt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[accentcolor=tud10d]{tudbeamer}
 
+% ===== Packages ==================================================================
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage[T1]{fontenc}
 
+\usepackage{color}
+\usepackage{listings}
+
+% ===== Commands, Changes =========================================================
+\newcommand{\strong}[1]{\textaccentcolor{\textsf{\textbf{#1}}}}
+\newenvironment{secframe}{\begin{frame}{\insertsectionhead\\\strong{\insertsubsectionhead}}}{\end{frame}}
+\newenvironment{subframe}{\begin{frame}{\insertsubsectionhead\\\strong{\insertsubsubsectionhead}}}{\end{frame}}
+
+\AtBeginSection{
+	\begin{frame}<beamer>{Outline}
+		\tableofcontents[currentsection, currentsubsection, hideothersubsections]
+	\end{frame}
+}
+
+% ===== Title =====================================================================
 \title{CMMI: Project Monitoring and Control}
 \author{Yannick Drost, Tobias Stoll, Dominik Schreiber}
 \date{10.01.2013}
 
+%%%%%%% Content %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
 \begin{titleframe}
 \end{titleframe}
+
+% ===== Project Monitoring and Control ============================================
+\section{The WHAT: Project Monitoring and Control}
+
+% Maturity Level 2 (managed)
+% short form: PMC
+% purpose:
+% - provide an understanding of the project's progress so that 
+% - appropriate corrective actions can be taken when the 
+% - project's performance deviates significantly from the plan.
+
+\subsection{SG 1: Monitor the Project Against the Plan}
+
+\subsubsection{SP 1.1: Monitor Project Planning Parameters}
+\begin{subframe}
+
+\end{subframe}
+
+\subsubsection{SP 1.2: Monitor Commitments}
+
+\subsubsection{SP 1.3: Monitor Project Risks}
+
+\subsubsection{SP 1.4: Monitor Data Management}
+
+\subsubsection{SP 1.5: Monitor Stakeholder Involvement}
+
+\subsubsection{SP 1.6: Conduct Progress Reviews}
+
+\subsubsection{SP 1.7: Conduct Milestone Reviews}
+
+\subsection{SG 2: Manage Corrective Action to Closure}
+
+\subsubsection{SP 2.1: Analyze Issues}
+
+\subsubsection{SP 2.2: Take Corrective Action}
+
+\subsubsection{SP 2.3: Manage Corrective Actions}
+
+% ===== industrial practices =======================================================
+\section{The HOW (part 1): industrial practices}
+
+% ===== real-life examples =========================================================
+\section{The HOW (part 2): real-life examples}
+
+\subsection{at Hochschulrechenzentrum, TU Darmstadt}
+\begin{secframe}
+
+\end{secframe}
+
+\subsection{at dimetis GmbH}
+\begin{secframe}
+
+\end{secframe}
+
+\subsection{at BASF IT-Services}
+\begin{secframe}
+
+\end{secframe}
 
 \end{document}
