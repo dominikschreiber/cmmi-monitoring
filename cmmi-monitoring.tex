@@ -17,8 +17,24 @@
 
 % ===== Commands, Changes =========================================================
 \newcommand{\strong}[1]{\textaccentcolor{\textsf{\textbf{#1}}}}
-\newenvironment{secframe}{\begin{frame}{\insertsectionhead\\\strong{\insertsubsectionhead}}}{\end{frame}}
-\newenvironment{subframe}{\begin{frame}{\insertsubsectionhead\\\strong{\insertsubsubsectionhead}}}{\end{frame}}
+
+\newcount\Level
+\let\Part=\part\def\part{\global\Level=0\Part}
+\let\Chapter=\chapter\def\chapter{\global\Level=1\Chapter}
+\let\Section=\section\def\section{\global\Level=2\Section}
+\let\Subsection=\subsection\def\subsection{\global\Level=3\Subsection}
+\let\Subsubsection=\subsubsection\def\subsubsection{\global\Level=4\Subsubsection}
+
+\newenvironment{tframe}{
+	\begin{frame}
+	\frametitle{\ifnum\Level=3\insertsectionhead\\\strong{\insertsubsectionhead}\fi\ifnum\Level=4\insertsubsectionhead\\\strong{\insertsubsubsectionhead}\fi
+	}
+}{
+	\end{frame}
+}
+
+%\newenvironment{secframe}{\begin{frame}{\insertsectionhead\\\strong{\insertsubsectionhead}}}{\end{frame}}
+%\newenvironment{subframe}{\begin{frame}{\insertsubsectionhead\\\strong{\insertsubsubsectionhead}}}{\end{frame}}
 
 \AtBeginSection{
 	\begin{frame}<beamer>{Outline}
@@ -39,6 +55,11 @@
 
 % ===== Project Monitoring and Control ============================================
 \section{The WHAT: Project Monitoring and Control}
+\begin{frame}
+
+\cite{cmmi2010cmmidevelopment13}
+
+\end{frame}
 
 % Maturity Level 2 (managed)
 % short form: PMC
@@ -50,9 +71,9 @@
 \subsection{SG 1: Monitor the Project Against the Plan}
 
 \subsubsection{SP 1.1: Monitor Project Planning Parameters}
-\begin{subframe}
+\begin{tframe}
 
-\end{subframe}
+\end{tframe}
 
 \subsubsection{SP 1.2: Monitor Commitments}
 
@@ -76,23 +97,43 @@
 
 % ===== industrial practices =======================================================
 \section{The HOW (part 1): industrial practices}
+\begin{frame}
+	
+\cite{alegria2006cmmiagile}
+
+\end{frame}
+
+\subsection{Extreme Programming}
+
+% - Test driven Development
+
+\subsection{SCRUM}
+
+\subsection{RUP}
 
 % ===== real-life examples =========================================================
 \section{The HOW (part 2): real-life examples}
 
 \subsection{at Hochschulrechenzentrum, TU Darmstadt}
-\begin{secframe}
+\begin{tframe}
 
-\end{secframe}
+\end{tframe}
 
 \subsection{at dimetis GmbH}
-\begin{secframe}
+\begin{tframe}
 
-\end{secframe}
+\end{tframe}
 
 \subsection{at BASF IT-Services}
-\begin{secframe}
+\begin{tframe}
 
-\end{secframe}
+\end{tframe}
+
+% ===== appendix: bibliography =====================================================
+\appendix
+\begin{frame}{Bibliography}
+	\bibliographystyle{alphanum}
+	\bibliography{cmmi-monitoring}
+\end{frame}
 
 \end{document}
