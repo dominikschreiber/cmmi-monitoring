@@ -5,7 +5,7 @@
 %% Yannick Drost, Tobias Stoll, Dominik Schreiber
 %% winter term 2012/2013, TU Darmstadt
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[accentcolor=tud10d]{tudbeamer}
+\documentclass[accentcolor=tud1b]{tudbeamer}
 
 % ===== Packages ==================================================================
 \usepackage[utf8]{inputenc}
@@ -14,10 +14,13 @@
 
 \usepackage{color}
 \usepackage{listings}
+%\usepackage[sectionbib]{natbib}
+%\usepackage{chapterbib}
 
 % ===== Commands, Changes =========================================================
 \newcommand{\strong}[1]{\textaccentcolor{\textsf{\textbf{#1}}}}
 
+% ----- shorthand for creating a frame with current headline+subheadline ----------
 \newcount\Level
 \let\Part=\part\def\part{\global\Level=0\Part}
 \let\Chapter=\chapter\def\chapter{\global\Level=1\Chapter}
@@ -27,15 +30,13 @@
 
 \newenvironment{tframe}{
 	\begin{frame}
-	\frametitle{\ifnum\Level=3\insertsectionhead\\\strong{\insertsubsectionhead}\fi\ifnum\Level=4\insertsubsectionhead\\\strong{\insertsubsubsectionhead}\fi
+	\frametitle{\ifnum\Level=2\insertsectionhead\fi\ifnum\Level=3\insertsectionhead\\\strong{\insertsubsectionhead}\fi\ifnum\Level=4\insertsubsectionhead\\\strong{\insertsubsubsectionhead}\fi
 	}
 }{
 	\end{frame}
 }
 
-%\newenvironment{secframe}{\begin{frame}{\insertsectionhead\\\strong{\insertsubsectionhead}}}{\end{frame}}
-%\newenvironment{subframe}{\begin{frame}{\insertsubsectionhead\\\strong{\insertsubsubsectionhead}}}{\end{frame}}
-
+% ===== Beamer Changes ============================================================
 \AtBeginSection{
 	\begin{frame}<beamer>{Outline}
 		\tableofcontents[currentsection, currentsubsection, hideothersubsections]
@@ -97,19 +98,34 @@
 
 % ===== industrial practices =======================================================
 \section{The HOW (part 1): industrial practices}
-\begin{frame}
+\begin{tframe}
 	
 \cite{alegria2006cmmiagile}
 
-\end{frame}
+\end{tframe}
 
 \subsection{Extreme Programming}
+\begin{tframe}
 
+\end{tframe}
 % - Test driven Development
 
 \subsection{SCRUM}
+\begin{tframe}
+\begin{block}{Overview}
+\begin{itemize}
+	\item \strong{agile} software-engineering process
+	\item \strong{iterative}: thinking in \emph{sprints} of 2-4 weeks
+	\item \strong{slim}: 3 \emph{roles}, 4 \emph{artifacts}, small set of \emph{rules}
+	\item \strong{communicative}: daily meetings, planning, reviews (but less paperwork)
+\end{itemize}
+\end{block}
+\end{tframe}
 
-\subsection{RUP}
+\subsection{Rational Unified Process}
+\begin{tframe}
+
+\end{tframe}
 
 % ===== real-life examples =========================================================
 \section{The HOW (part 2): real-life examples}
