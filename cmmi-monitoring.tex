@@ -28,11 +28,16 @@
 \let\Subsection=\subsection\def\subsection{\global\Level=3\Subsection}
 \let\Subsubsection=\subsubsection\def\subsubsection{\global\Level=4\Subsubsection}
 
-\newenvironment{tframe}{
+\newenvironment*{tframe}[1][]{%
 	\begin{frame}
-	\frametitle{\ifnum\Level=2\insertsectionhead\fi\ifnum\Level=3\insertsectionhead\\\strong{\insertsubsectionhead}\fi\ifnum\Level=4\insertsubsectionhead\\\strong{\insertsubsubsectionhead}\fi
-	}
-}{
+	\ifnum\Level=2
+		\frametitle{\insertsectionhead\\\strong{#1}}
+	\fi\ifnum\Level=3
+		\frametitle{\insertsectionhead\\\strong{\insertsubsectionhead} \textnormal{#1}}
+	\fi\ifnum\Level=4
+		\frametitle{\insertsubsectionhead\\\strong{\insertsubsubsectionhead} #1}
+	\fi
+}{%
 	\end{frame}
 }
 
@@ -106,20 +111,32 @@
 
 \subsection{Extreme Programming}
 \begin{tframe}
-
-\end{tframe}
 % - Test driven Development
+\end{tframe}
 
 \subsection{SCRUM}
-\begin{tframe}
-\begin{block}{Overview}
-\begin{itemize}
-	\item \strong{agile} software-engineering process
-	\item \strong{iterative}: thinking in \emph{sprints} of 2-4 weeks
-	\item \strong{slim}: 3 \emph{roles}, 4 \emph{artifacts}, small set of \emph{rules}
-	\item \strong{communicative}: daily meetings, planning, reviews (but less paperwork)
-\end{itemize}
-\end{block}
+\begin{tframe}[- what it is]
+	\begin{block}{Overview}
+		\begin{itemize}
+			\item \strong{agile} software-engineering process
+			\item \strong{iterative}: thinking in \emph{sprints}
+			\item \strong{slim}: 3 \emph{roles}, 4 \emph{artifacts}, small set of \emph{rules}
+			\item \strong{communicative}: daily meetings, planning, reviews (but less paperwork)
+		\end{itemize}
+	\end{block}
+\pause
+	\begin{block}{Differences to Extreme Programming}
+		\begin{itemize}
+			\item \strong{iteration length}: month (SCRUM) vs. 1-2 weeks (XP)
+			\item \strong{change adaption}: not in current sprint (SCRUM) vs. always (XP)
+			\item \strong{work order}: team chooses (SCRUM) vs. customer chooses (XP)
+			\item \strong{engineering practices}: not given (SCRUM) vs. given (XP)
+		\end{itemize}
+	\end{block}
+\end{tframe}
+
+\begin{tframe}[- how it supports Monitoring/Control]
+
 \end{tframe}
 
 \subsection{Rational Unified Process}
