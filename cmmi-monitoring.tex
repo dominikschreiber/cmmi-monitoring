@@ -14,6 +14,7 @@
 
 \usepackage{color}
 \usepackage{listings}
+\usepackage{multicol}
 %\usepackage[sectionbib]{natbib}
 %\usepackage{chapterbib}
 
@@ -28,6 +29,22 @@
 \let\Subsection=\subsection\def\subsection{\global\Level=3\Subsection}
 \let\Subsubsection=\subsubsection\def\subsubsection{\global\Level=4\Subsubsection}
 
+% creates a frame with a frametitle of up to two lines, depending on the current
+% document structure. that means: 
+% 	- if the tframe is created inside a section, it will have the sections header
+% 	  as frametitle
+% 	- if the tframe is created inside a subsection, it will have the sections
+% 	  header as frametitle followed by the subsections header in the next line
+% 	- if the tframe is created inside a subsubsection, it will have the subsections
+% 	  header as frametitle followed by the subsubsections header in the next line
+% each frametitle can be additionally adjusted by the optional argument. any text
+% in there will be printed as \textnormal and appended to the second line with one
+% space between the content and the appended text.
+%
+% usage:
+% 	\begin{tframe}[optional addition to the subtitle]
+% 		use it just as any normal frame
+% 	\end{tframe}
 \newenvironment*{tframe}[1][]{%
 	\begin{frame}
 	\ifnum\Level=2
@@ -136,7 +153,28 @@
 \end{tframe}
 
 \begin{tframe}[- how it supports Monitoring/Control]
-
+	\begin{block}{Regular meetings}
+		\begin{itemize}
+			\item \strong{Sprint planning meeting} (part 1: whole team): 
+				\begin{itemize}
+					\item clean product backlog
+					\item prioritize entries
+					\item choose entries for sprint
+				\end{itemize}
+			\item \strong{Sprint planning meeting} (part 2: developers):
+				\begin{itemize}
+					\item entries to 1-day tasks ($\Rightarrow$ sprint backlog)
+					\item sprint-goal from entries
+				\end{itemize}
+			\item \strong{Sprint Review}:
+				\begin{itemize}
+					\item present product to product owner
+					\item check sprint-goal
+					\item give feedback for current sprint
+					\item update product backlog
+				\end{itemize}
+		\end{itemize}
+	\end{block}
 \end{tframe}
 
 \subsection{Rational Unified Process}
