@@ -78,11 +78,11 @@
 
 % ===== Project Monitoring and Control ============================================
 \section{The WHAT: Project Monitoring and Control}
-\begin{frame}
+\begin{tframe}
 
 \cite{cmmi2010cmmidevelopment13}
 
-\end{frame}
+\end{tframe}
 
 % Maturity Level 2 (managed)
 % short form: PMC
@@ -92,6 +92,9 @@
 % - project's performance deviates significantly from the plan.
 
 \subsection{SG 1: Monitor the Project Against the Plan}
+\begin{tframe}
+
+\end{tframe}
 
 \subsubsection{SP 1.1: Monitor Project Planning Parameters}
 \begin{tframe}
@@ -99,24 +102,54 @@
 \end{tframe}
 
 \subsubsection{SP 1.2: Monitor Commitments}
+\begin{tframe}
+
+\end{tframe}
 
 \subsubsection{SP 1.3: Monitor Project Risks}
+\begin{tframe}
+
+\end{tframe}
 
 \subsubsection{SP 1.4: Monitor Data Management}
+\begin{tframe}
+
+\end{tframe}
 
 \subsubsection{SP 1.5: Monitor Stakeholder Involvement}
+\begin{tframe}
+
+\end{tframe}
 
 \subsubsection{SP 1.6: Conduct Progress Reviews}
+\begin{tframe}
+
+\end{tframe}
 
 \subsubsection{SP 1.7: Conduct Milestone Reviews}
+\begin{tframe}
+
+\end{tframe}
 
 \subsection{SG 2: Manage Corrective Action to Closure}
+\begin{tframe}
+
+\end{tframe}
 
 \subsubsection{SP 2.1: Analyze Issues}
+\begin{tframe}
+
+\end{tframe}
 
 \subsubsection{SP 2.2: Take Corrective Action}
+\begin{tframe}
+
+\end{tframe}
 
 \subsubsection{SP 2.3: Manage Corrective Actions}
+\begin{tframe}
+
+\end{tframe}
 
 % ===== industrial practices =======================================================
 \section{The HOW (part 1): industrial practices}
@@ -128,7 +161,12 @@
 
 \subsection{Extreme Programming}
 \begin{tframe}
-% - Test driven Development
+	\begin{block}{Overview}
+		\begin{itemize}
+			\item \strong{agile} software-engineering process
+			\item strong \strong{principles}: Pair Programming, Test-driven Development, Continuous Integration, \dots
+		\end{itemize}
+	\end{block}
 \end{tframe}
 
 \subsection{SCRUM}
@@ -144,7 +182,7 @@
 \pause
 	\begin{block}{Differences to Extreme Programming}
 		\begin{itemize}
-			\item \strong{iteration length}: month (SCRUM) vs. 1-2 weeks (XP)
+			\item \strong{iteration length}: month (SCRUM) vs. week (XP)
 			\item \strong{change adaption}: not in current sprint (SCRUM) vs. always (XP)
 			\item \strong{work order}: team chooses (SCRUM) vs. customer chooses (XP)
 			\item \strong{engineering practices}: not given (SCRUM) vs. given (XP)
@@ -157,24 +195,41 @@
 		\begin{itemize}
 			\item \strong{Sprint planning meeting} (part 1: whole team): 
 				\begin{itemize}
-					\item clean product backlog
-					\item prioritize entries
-					\item choose entries for sprint
+					\item clean product backlog, prioritize entries
+					\item choose entries for next sprint
 				\end{itemize}
 			\item \strong{Sprint planning meeting} (part 2: developers):
 				\begin{itemize}
-					\item entries to 1-day tasks ($\Rightarrow$ sprint backlog)
-					\item sprint-goal from entries
+					\item convert entries to 1-day tasks ($\Rightarrow$ sprint backlog)
+					\item extract sprint-goal from entries
 				\end{itemize}
 			\item \strong{Sprint Review}:
 				\begin{itemize}
-					\item present product to product owner
-					\item check sprint-goal
-					\item give feedback for current sprint
-					\item update product backlog
+					\item present product to product owner, check sprint-goal
+					\item give feedback for last sprint, update product backlog
+				\end{itemize}
+			\item \strong{Sprint Retrospective}:
+				\begin{itemize}
+					\item concrete improvements based on
+					\item feedback for the last sprint
 				\end{itemize}
 		\end{itemize}
 	\end{block}
+\end{tframe}
+
+\begin{tframe}[]
+	\begin{multicols}{2}
+		\begin{figure}
+			\centering
+			\includegraphics[width=.45\textwidth]{img/scrum-taskboard.jpg}
+			\caption{SCRUM Taskboard}
+		\end{figure}
+		\begin{figure}
+			\centering
+			\includegraphics[width=.45\textwidth]{img/scrum-burndown-chart.jpg}
+			\caption{SCRUM Burndown Chart}
+		\end{figure}
+	\end{multicols}
 \end{tframe}
 
 \subsection{Rational Unified Process}
