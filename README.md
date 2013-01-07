@@ -8,9 +8,9 @@ Outline
 
 The slides contain three parts:
 
-1. **WHAT** is "CMMI: Monitoring and Control"?
-2. **HOW** is it implemented in industrial/process structures?
-3. **HOW** do real-world companies use it?
+1. **WHAT** is "CMMI: Monitoring and Control"? *(responsible: Tobias Stoll)*
+2. **HOW** is it implemented in industrial/process structures? *(responsible: Dominik Schreiber)*
+3. **HOW** do real-world companies use it? *(responsible: Dominik Schreiber)*
 
 Contribute
 ----------
