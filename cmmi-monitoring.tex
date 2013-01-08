@@ -159,6 +159,7 @@
 
 \end{tframe}
 
+% ----- scrum ----------------------------------------------------------------------
 \subsection{Scrum}
 \begin{tframe}[- what it is]
 	\begin{block}{Overview}
@@ -171,7 +172,7 @@
 	\end{block}
 \end{tframe}
 
-\begin{tframe}[- how it supports Monitoring/Control]
+\begin{tframe}[- how it supports PMC]
 	\begin{block}{Regular meetings}
 		\begin{itemize}
 			\item \strong{Sprint planning meeting} (part 1: whole team): 
@@ -213,6 +214,7 @@
 	\end{multicols}
 \end{tframe}
 
+% ----- extreme programming ---------------------------------------------------------
 \subsection{Extreme Programming}
 \begin{tframe}[- what it is]
 	\begin{block}{Overview}
@@ -231,6 +233,26 @@
 		\end{itemize}
 	\end{block}
 \end{tframe}
+
+\begin{tframe}[- how it supports PMC]
+	\begin{block}{through the engineering process}
+		\begin{itemize}
+			\item \strong{Planning Game}: release+iteration planning match results with plan constantly, split up in 3 phases:
+			\begin{multicols}{3}
+				\begin{enumerate}
+					\item \emph{exploration phase}\\{\scriptsize create user stories/split them into tasks}
+					\item \emph{commitment phase}\\{\scriptsize commit to func\-tion\-ali\-ties/assign tasks}
+					\item \emph{steering phase}\\{\scriptsize adjust plan/perform tasks, match result to plan}
+				\end{enumerate}
+			\end{multicols}
+			\item \strong{Test-driven Development}: all productive code is written to make failing unit tests pass $\rightarrow$ unit tests describe the plan
+			\item \strong{Continuous Integration}: automated unit tests match every commit to the plan
+		\end{itemize}
+		it is the \strong{combination} of the 12 principles that makes XP work
+	\end{block}
+\end{tframe}
+
+% ----- rational unified process ---------------------------------------------------
 \subsection{Rational Unified Process}
 \begin{tframe}
 
@@ -329,6 +351,42 @@
 \begin{frame}{Bibliography}
 	\bibliographystyle{alphanum}
 	\bibliography{cmmi-monitoring}
+\end{frame}
+
+% ===== backup slides ==============================================================
+\begin{frame}{Extreme Programming\\\strong{Principles}}
+\label{fr:xp-principles}
+	\begin{multicols}{2}
+		\begin{block}{Fine scale feedback}
+			\begin{itemize}
+				\item pair programming
+				\item planning game
+				\item test-driven development
+				\item whole team
+			\end{itemize}
+		\end{block}
+		\begin{block}{continuous process}
+			\begin{itemize}
+				\item continuous integration
+				\item refactoring/design improvement
+				\item small releases
+			\end{itemize}
+		\end{block}
+		\begin{block}{shared understanding}
+			\begin{itemize}
+				\item coding standards
+				\item collective code ownership
+				\item simple design
+				\item system metaphor
+			\end{itemize}
+		\end{block}
+		\begin{block}{programmer welfare}
+			\begin{itemize}
+				\item sustainable pace
+			\end{itemize}
+			\vspace{1cm}
+		\end{block}
+	\end{multicols}	
 \end{frame}
 
 \end{document}
