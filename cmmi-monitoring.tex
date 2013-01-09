@@ -15,11 +15,14 @@
 \usepackage{color}
 \usepackage{listings}
 \usepackage{multicol}
+\usepackage{eurosym}
+\usepackage{amsmath}
 %\usepackage[sectionbib]{natbib}
 %\usepackage{chapterbib}
 
 % ===== Commands, Changes =========================================================
 \newcommand{\strong}[1]{\textaccentcolor{\textsf{\textbf{#1}}}}
+\newcommand{\matheuro}{\text{\officialeuro}}
 
 % ----- shorthand for creating a frame with current headline+subheadline ----------
 \newcount\Level
@@ -162,14 +165,21 @@
 % ----- scrum ----------------------------------------------------------------------
 \subsection{Scrum}
 \begin{tframe}[- what it is]
-	\begin{block}{Overview}
-		\begin{itemize}
-			\item \strong{agile} software-engineering process
-			\item \strong{iterative}: thinking in \emph{sprints}
-			\item \strong{slim}: 3 \emph{roles}, 4 \emph{artifacts}, small set of \emph{rules}
-			\item \strong{communicative}: daily meetings, planning, reviews (but less paperwork)
-		\end{itemize}
-	\end{block}
+	\begin{multicols}{2}
+		\begin{block}{Overview}
+			\begin{itemize}
+				\item \strong{agile} software-engineering process
+				\item \strong{iterative}: thinking in \emph{sprints}
+				\item \strong{slim}: 3 \emph{roles}, 4 \emph{artifacts}, small set of \emph{rules}
+				\item \strong{communicative}: daily meetings, planning, reviews (but less paperwork)
+			\end{itemize}
+		\end{block}
+		\begin{figure}
+			\centering
+			\includegraphics[width=.45\textwidth]{img/scrum-process.png}
+			\caption{scrum process overview}
+		\end{figure}
+	\end{multicols}
 \end{tframe}
 
 \begin{tframe}[- how it supports PMC]
@@ -252,15 +262,115 @@
 	\end{block}
 \end{tframe}
 
-% ----- rational unified process ---------------------------------------------------
-\subsection{Rational Unified Process}
+% ----- representations of progress -------------------------------------------------
+\subsection{methodology-independent representations of progress}
 \begin{tframe}
+	\begin{multicols}{2}
+		\begin{block}{gantt chart}
+			\begin{itemize}
+				\item illustrates project \strong{schedule}
+				\item project is broken down into elements
+				\item each element has \strong{start} and \strong{end}
+				\item progress of each element can be illustrated
+			\end{itemize}
+		\end{block}
+		\begin{block}{network diagram}
+			\begin{itemize}
+				\item shows \strong{dependencies} in schedule
+				\item same information as gantt chart, different representation
+			\end{itemize}
+		\end{block}
+		\begin{figure}
+			\centering
+			\includegraphics[width=.35\textwidth]{img/gantt-chart.png}\\\vspace{.3cm}
+			\includegraphics[width=.45\textwidth]{img/network-diagram.png}
+			\caption{gantt chart, network diagram}
+		\end{figure}
+	\end{multicols}
+\end{tframe}
 
+% ----- earned-value analysis ------------------------------------------------------
+\subsection{Earned-Value Analysis}
+\begin{tframe}[- what it is]
+	\begin{multicols}{2}
+		\begin{figure}
+			\centering
+			\includegraphics[width=.45\textwidth]{img/earned-value-analysis.png}
+			\caption{combined values in EVA}
+		\end{figure}
+		\begin{block}{project controlling tool}
+			\begin{itemize}
+				\item allows \strong{monitoring} of \emph{scope}, \emph{schedule} and \emph{cost} of a project
+				\item allows \strong{forecasts} for the evolving project
+				\item not restricted to software engineering, works for \strong{all kinds of projects}
+			\end{itemize}
+		\end{block}
+	\end{multicols}
+\end{tframe}
+
+\begin{tframe}[- how it works]
+	\begin{multicols}{2}
+		\begin{block}{measured values}
+			\begin{itemize}
+				\item \strong{planned cost} (\emph{PC}): pre-defined cost for the \emph{whole project}
+				\item \strong{actual cost} (\emph{AC)}: actual cost \emph{until now}
+			\end{itemize}
+		\end{block}
+		\begin{block}{metrics}
+			\begin{itemize}
+				\item \strong{earned value} (\emph{EV}): actual \emph{value} of the work until now\\{\scriptsize simple metric: $EV = Budget \cdot \%Progress$}
+			\end{itemize}
+		\end{block}
+		\begin{block}{derived values}
+			\begin{itemize}
+				\item \strong{schedule variance}:\\$SV = EV - PC$
+				\item \strong{cost variance}:\\$CV = EV - AC$
+				\item \strong{schedule performance index}:\\$SPI = \frac{EV}{PC}$
+				\item \strong{cost performance index}:\\$CPI = \frac{EV}{AC}$
+			\end{itemize}
+		\end{block}
+	\end{multicols}
+\end{tframe}
+
+\begin{tframe}[- example]
+	\begin{multicols}{2}
+		\begin{block}{your task}
+			\begin{itemize}
+				\item list of \strong{500} hand-written mail addresses
+				\item insert this into \strong{mailing list}
+				\item you need \strong{2h} for this, get \strong{10\euro{/h}}
+				\item \strong{half time!} 1h left
+			\end{itemize}
+		\end{block}
+		\begin{block}{measured values}
+			\begin{itemize}
+				\item \strong{PC} = $20\matheuro \cdot \frac{1}{2} = 10\matheuro$
+				\item \strong{AC} = $10\frac{\matheuro}{1h} \cdot 1h = 10\matheuro$
+			\end{itemize}
+		\end{block}
+		\begin{block}{metrics}
+			\begin{itemize}
+				\item you were \strong{fast}! Did 300 already!
+				\item \strong{EV} = $20\matheuro \cdot \frac{300}{500} = 12\matheuro$
+			\end{itemize}
+		\end{block}
+		\begin{block}{derived values}
+			\begin{itemize}
+				\item \strong{SV} = $12\matheuro - 10\matheuro = 2\matheuro$
+				\item \strong{CV} = $12\matheuro - 10\matheuro = 2\matheuro$
+				\item \strong{SPI} = $\frac{12\matheuro}{10\matheuro} = 1.2$
+				\item \strong{CPI} = $\frac{12\matheuro}{10\matheuro} = 1.2$
+			\end{itemize}
+		\end{block}
+	\end{multicols}
+	\pause
+	If you stay that fast, you'll finish \strong{20min early}. Means: you'll get \strong{\euro{3,30}} for free.
 \end{tframe}
 
 % ===== real-life examples =========================================================
 \section[real-life examples]{The HOW (part 2): real-life examples, by Dominik Schreiber}
 
+% ----- openlearnware --------------------------------------------------------------
 \subsection{at openLearnWare}
 \begin{tframe}[- project overview]
 	\begin{multicols}{2}
@@ -322,8 +432,9 @@
 	\begin{multicols}{2}
 		\begin{figure}
 			\centering
-			\includegraphics[width=.45\textwidth, draft]{img/olw-mindmap.png}
-			\caption{taskboard-mindmap}
+			\includegraphics[height=.85\textheight]{img/olw-mindmap.pdf}
+			%\includegraphics[height=.85\textheight]{img/olw-mindmap-expanded.png}	
+			\caption{former product backlog}
 		\end{figure}
 		\begin{block}{change as the only constant}
 			\begin{itemize}
@@ -336,15 +447,47 @@
 	\end{multicols}
 \end{tframe}
 
+% ----- major-client software-engineering company ----------------------------------
+\subsection{at a major-client software-engineering company}
+\begin{tframe}
+	\begin{block}{Project: Web-based software for the government}
+		\begin{itemize}
+			\item up to 1.5 years \strong{specification phase}
+			\item teams of \strong{<10 members}
+			\item project head spends \strong{1 day a week} with the customer
+		\end{itemize}
+	\end{block}
+\end{tframe}
+
+\begin{tframe}
+	\begin{block}{the process}
+		\begin{itemize}
+			\item \strong{specification phase}: before the project starts, it gets strongly \emph{specified} (customer reviews this)
+			\item \strong{implementation}: according to system specification, features are implemented
+			\item \strong{internal reviews}: code is reviewed twice: once technical, once specialist
+			\item \strong{small releases}: working features are shipped to the customer early, loaded with unit tests/performance tests/specific tests
+			\item \strong{issue tracking}: customer show occuring bugs to developers or reports them in the issue tracker
+		\end{itemize}
+	\end{block}
+\end{tframe}
+
 \subsection{at dimetis GmbH}
 \begin{tframe}
 
 \end{tframe}
 
-\subsection{at BASF IT-Services}
-\begin{tframe}
+% ===== post-presentation ==========================================================
+\begin{frame}{Thank you for your attention!}
+\begin{center}
+\pause
+\vspace{1cm}
 
-\end{tframe}
+I want to hear at least \strong{3 questions} from you.
+\vspace{1cm}
+
+\noindent{\huge Start now!}
+\end{center}
+\end{frame}
 
 % ===== appendix: bibliography =====================================================
 \appendix
