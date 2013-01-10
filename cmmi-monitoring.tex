@@ -9,7 +9,7 @@
 
 % ===== Packages ==================================================================
 \usepackage[utf8]{inputenc}
-\usepackage[ngerman]{babel}
+\usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 
 \usepackage{color}
@@ -287,12 +287,12 @@
 % ===== industrial practices =======================================================
 \section[industrial practices]{The HOW (part 1): industrial practices, by Dominik Schreiber}
 \begin{tframe}
-	\begin{listblock}{classical aproaches}
+	\begin{listblock}{Classical approaches}
 		\item \strong{waterfall model} does one step after the other
 		\item problem: each step is considered to be \strong{finished} after moving to the next step
 		\item $\Rightarrow$ bad monitoring/control leads to \strong{heavy setbacks}
 	\end{listblock}
-	\begin{listblock}{agile approaches}
+	\begin{listblock}{Agile approaches}
 		\item iterations, small releases, \dots should minimize this risk
 		\item setbacks are \emph{possible} but \strong{less heavy}
 		\item \cite{alegria2006cmmiagile} shows ways to implement CMMI with agile methods
@@ -374,7 +374,7 @@
 \end{tframe}
 
 \begin{tframe}[- how it supports PMC]
-	\begin{block}{through the engineering process}
+	\begin{block}{Through the engineering process}
 		\begin{itemize}
 			\item \strong{Planning Game}: release+iteration planning match results with plan constantly, split up in 3 phases:\later{SP 1.1, 1.2, 1.3, 1.5, 2.1, 2.2}
 			\begin{multicols}{3}
@@ -392,16 +392,16 @@
 \end{tframe}
 
 % ----- representations of progress -------------------------------------------------
-\subsection{methodology-independent representations of progress}
+\subsection{Methodology-independent representations of progress}
 \begin{tframe}
 	\begin{multicols}{2}
-		\begin{listblock}{gantt chart}
+		\begin{listblock}{Gantt chart}
 			\item illustrates project \strong{schedule}
 			\item project is broken down into elements
 			\item each element has \strong{start} and \strong{end}
 			\item progress of each element can be illustrated
 		\end{listblock}
-		\begin{listblock}{network diagram}	
+		\begin{listblock}{Network diagram}	
 			\item shows \strong{dependencies} in schedule
 			\item same information as gantt chart, different representation
 		\end{listblock}
@@ -423,7 +423,7 @@
 			\includegraphics[width=.45\textwidth]{img/earned-value-analysis.png}
 			\caption{combined values in EVA}
 		\end{figure}
-		\begin{listblock}{project controlling tool}
+		\begin{listblock}{Project controlling tool}
 			\item allows \strong{monitoring} of \emph{scope}, \emph{schedule} and \emph{cost} of a project
 			\item allows \strong{forecasts} for the evolving project
 			\item not restricted to software engineering, works for \strong{all kinds of projects}
@@ -433,14 +433,14 @@
 
 \begin{tframe}[- how it works]
 	\begin{multicols}{2}
-		\begin{listblock}{measured values}
+		\begin{listblock}{Measured values}
 			\item \strong{planned cost} (\emph{PC}): pre-defined cost for the \emph{whole project}
 			\item \strong{actual cost} (\emph{AC)}: actual cost \emph{until now}
 		\end{listblock}
-		\begin{listblock}{metrics}
+		\begin{listblock}{Metrics}
 			\item \strong{earned value} (\emph{EV}): actual \emph{value} of the work until now\\{\scriptsize simple metric: $EV = Budget \cdot \%Progress$}
 		\end{listblock}
-		\begin{listblock}{derived values}
+		\begin{listblock}{Derived values}
 			\item \strong{schedule variance}:\\$SV = EV - PC$
 			\item \strong{cost variance}:\\$CV = EV - AC$
 			\item \strong{schedule performance index}:\\$SPI = \frac{EV}{PC}$
@@ -451,21 +451,21 @@
 
 \begin{tframe}[- example]
 	\begin{multicols}{2}
-		\begin{listblock}{your task}
+		\begin{listblock}{Your task}
 			\item list of \strong{500} hand-written mail addresses
 			\item insert this into \strong{mailing list}
 			\item you need \strong{2h}, get \strong{\euro{20}} ($= 10\frac{\matheuro}{h}$)
 			\item \strong{half time!} 1h left
 		\end{listblock}
-		\begin{listblock}{measured values}
+		\begin{listblock}{Measured values}
 			\item \strong{PC} = $20\matheuro \cdot \frac{1}{2} = 10\matheuro$
 			\item \strong{AC} = $10\frac{\matheuro}{h} \cdot 1h = 10\matheuro$
 		\end{listblock}
-		\begin{listblock}{metrics}
+		\begin{listblock}{Metrics}
 			\item you were \strong{fast}! Did 300 already!
 			\item \strong{EV} = $20\matheuro \cdot \frac{300}{500} = 12\matheuro$
 		\end{listblock}
-		\begin{listblock}{derived values}
+		\begin{listblock}{Derived values}
 			\item \strong{SV} = $12\matheuro - 10\matheuro = 2\matheuro$
 			\item \strong{CV} = $12\matheuro - 10\matheuro = 2\matheuro$
 			\item \strong{SPI} = $\frac{12\matheuro}{10\matheuro} = 1.2$
@@ -498,7 +498,7 @@
 \end{tframe}
 
 \begin{tframe}[- project structure]
-	\begin{listblock}{team members}
+	\begin{listblock}{Team members}
 		\item ``Intellectual head'' -- like Scrum's \strong{product owner}, responsible for all ``non-technical stuff''
 		\item ``Technical head'' -- like Scrum's \strong{scrum master}, responsible for all ``technical stuff''
 		\item 5 HiWis, working 8-20 hours a week -- the \strong{scrum team}
@@ -507,7 +507,7 @@
 
 \begin{tframe}[- project monitoring/control]
 	\begin{multicols}{2}
-		\begin{listblock}{process items}
+		\begin{listblock}{Process items}
 			\item weekly \strong{scrum meeting} -- about an hour, with all team members
 			\item weekly \strong{planning meeting} -- about 2 hours, intellectual+technical head
 			\item \strong{taskboard} as a mirror of the redmine \emph{ticket system}
@@ -531,7 +531,7 @@
 			\includegraphics[height=.85\textheight]{img/olw-mindmap.pdf}
 			\caption{former product backlog}
 		\end{figure}
-		\begin{listblock}{change as the only constant}
+		\begin{listblock}{Change as the only constant}
 			\item no current team member from the \strong{founder team}
 			\item began with \strong{giant mind-maps} as product/sprint backlogs
 			\item had 2-3 nearly \strong{complete restarts}
@@ -557,7 +557,7 @@
 
 \begin{tframe}
 	\begin{multicols}{2}
-		\begin{listblock}{a single Scrum team}
+		\begin{listblock}{A single Scrum team}
 			\item 2-3 Developers + QA
 			\item 1-5 Sprints per Scrum
 			\item 2-4 Weeks per Sprint
@@ -572,7 +572,7 @@
 \end{tframe}
 
 \begin{tframe}
-	\begin{block}{conclusion at dimetis}
+	\begin{block}{Conclusion at dimetis}
 		\vspace{1cm}
 		\begin{quote}
 			Scrum has interesting approaches that allow reaching high cmmi-levels \textnormal{in theory}. In practice, the goal of putting as less \textnormal{overhead} as possible on the developers stands against this.
@@ -591,7 +591,7 @@
 \end{tframe}
 
 \begin{tframe}
-	\begin{listblock}{the process}
+	\begin{listblock}{The process}
 		\item \strong{specification phase}: before the project starts, it gets strongly \emph{specified} (customer reviews this)
 		\item \strong{implementation}: according to system specification, features are implemented
 		\item \strong{internal reviews}: code is reviewed twice: once technical, once specialist
@@ -621,7 +621,7 @@ I want to hear at least {\huge\strong{3 questions}} from you.
 \end{frame}
 
 % ===== backup slides ==============================================================
-\begin{frame}{More about Extreme Programming:\\\strong{the Principles}}
+\begin{frame}{More about Extreme Programming:\\\strong{The principles}}
 \label{fr:xp-principles}
 	\begin{multicols}{2}
 		\begin{listblock}{Fine scale feedback}
@@ -630,18 +630,18 @@ I want to hear at least {\huge\strong{3 questions}} from you.
 			\item test-driven development
 			\item whole team
 		\end{listblock}
-		\begin{listblock}{continuous process}
+		\begin{listblock}{Continuous process}
 			\item continuous integration
 			\item refactoring/design improvement
 			\item small releases
 		\end{listblock}
-		\begin{listblock}{shared understanding}
+		\begin{listblock}{Shared understanding}
 			\item coding standards
 			\item collective code ownership
 			\item simple design
 			\item system metaphor
 		\end{listblock}
-		\begin{listblock}{programmer welfare}
+		\begin{listblock}{Programmer welfare}
 			\item sustainable pace
 			\vspace{1cm}
 		\end{listblock}
