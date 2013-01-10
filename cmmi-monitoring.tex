@@ -21,8 +21,15 @@
 %\usepackage{chapterbib}
 
 % ===== Commands, Changes =========================================================
+
+% ----- emphasize text as strong and in color -------------------------------------
 \newcommand{\strong}[1]{\textaccentcolor{\textsf{\textbf{#1}}}}
+
+% ----- shorthand for the euro sign (€) in math mode ------------------------------
 \newcommand{\matheuro}{\text{\officialeuro}}
+
+% ----- text that should pop up only on the second slide --------------------------
+\newcommand{\later}[1]{\hfill\textcolor{tud8b}{\textsf{\textbf{\visible<2->{#1}}}}}
 
 % ----- shorthand for creating a frame with current headline+subheadline ----------
 \newcount\Level
@@ -61,6 +68,7 @@
 	\end{frame}
 }
 
+% ----- shorthand for creating a block that contains only an itemize-environment --
 \newenvironment{listblock}[1]{%
 	\begin{block}{#1}
 		\begin{itemize}
@@ -311,7 +319,7 @@
 
 \begin{tframe}[- how it supports PMC]
 	\begin{listblock}{Regular meetings}
-		\item \strong{Sprint planning meeting} (part 1: whole team): 
+		\item \strong{Sprint planning meeting} (part 1: whole team): \later{SP 1.1, 1.2, 1.3}
 			\begin{itemize}
 				\item clean product backlog, prioritize entries
 				\item choose entries for next sprint
@@ -321,12 +329,12 @@
 				\item convert entries to 1-day tasks ($\Rightarrow$ sprint backlog)
 				\item extract sprint-goal from entries
 			\end{itemize}
-		\item \strong{Sprint Review}:
+		\item \strong{Sprint Review}:\later{SP 1.5, 1.6, 1.7}
 			\begin{itemize}
 				\item present product to product owner, check sprint-goal
 				\item give feedback for last sprint, update product backlog
 			\end{itemize}
-		\item \strong{Sprint Retrospective}:
+		\item \strong{Sprint Retrospective}:\later{SP 2.1, 2.2}
 			\begin{itemize}
 				\item concrete improvements based on
 				\item feedback for the last sprint
@@ -368,7 +376,7 @@
 \begin{tframe}[- how it supports PMC]
 	\begin{block}{through the engineering process}
 		\begin{itemize}
-			\item \strong{Planning Game}: release+iteration planning match results with plan constantly, split up in 3 phases:
+			\item \strong{Planning Game}: release+iteration planning match results with plan constantly, split up in 3 phases:\later{SP 1.1, 1.2, 1.3, 1.5, 2.1, 2.2}
 			\begin{multicols}{3}
 				\begin{enumerate}
 					\item \emph{exploration phase}\\{\scriptsize create user stories/split them into tasks}
@@ -376,8 +384,8 @@
 					\item \emph{steering phase}\\{\scriptsize adjust plan/perform tasks, match result to plan}
 				\end{enumerate}
 			\end{multicols}
-			\item \strong{Test-driven Development}: all productive code is written to make failing unit tests pass $\rightarrow$ unit tests describe the plan
-			\item \strong{Continuous Integration}: automated unit tests match every commit to the plan
+			\item \strong{Test-driven Development}: all productive code is written to make failing unit tests pass $\rightarrow$ unit tests describe the plan\later{SP 1.4, 1.6, 1.7}
+			\item \strong{Continuous Integration}: automated unit tests match every commit to the plan\later{SP 1.6, 1.7}
 		\end{itemize}
 		it is the \strong{combination} of the 12 principles that makes XP work
 	\end{block}
