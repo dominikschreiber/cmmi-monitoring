@@ -61,6 +61,14 @@
 	\end{frame}
 }
 
+\newenvironment{listblock}[1]{%
+	\begin{block}{#1}
+		\begin{itemize}
+}{%
+		\end{itemize}
+	\end{block}
+}
+
 % ===== Beamer Changes ============================================================
 \AtBeginSection{
 	\begin{frame}<beamer>{Outline}
@@ -271,59 +279,62 @@
 % ===== industrial practices =======================================================
 \section[industrial practices]{The HOW (part 1): industrial practices, by Dominik Schreiber}
 \begin{tframe}
-	
-\cite{alegria2006cmmiagile}
-
+	\begin{listblock}{classical aproaches}
+		\item \strong{waterfall model} does one step after the other
+		\item problem: each step is considered to be \strong{finished} after moving to the next step
+		\item $\Rightarrow$ bad monitoring/control leads to \strong{heavy setbacks}
+	\end{listblock}
+	\begin{listblock}{agile approaches}
+		\item iterations, small releases, \dots should minimize this risk
+		\item setbacks are \emph{possible} but \strong{less heavy}
+		\item \cite{alegria2006cmmiagile} shows ways to implement CMMI with agile methods
+	\end{listblock}
 \end{tframe}
 
 % ----- scrum ----------------------------------------------------------------------
 \subsection{Scrum}
 \begin{tframe}[- what it is]
 	\begin{multicols}{2}
-		\begin{block}{Overview}
-			\begin{itemize}
-				\item \strong{agile} software-engineering process
-				\item \strong{iterative}: thinking in \emph{sprints}
-				\item \strong{slim}: 3 \emph{roles}, 4 \emph{artifacts}, small set of \emph{rules}
-				\item \strong{communicative}: daily meetings, planning, reviews (but less paperwork)
-			\end{itemize}
-		\end{block}
+		\begin{listblock}{Overview}
+			\item \strong{agile} software-engineering process
+			\item \strong{iterative}: thinking in \emph{sprints}
+			\item \strong{slim}: 3 \emph{roles}, 4 \emph{artifacts}, small set of \emph{rules}
+			\item \strong{communicative}: daily meetings, planning, reviews (but less paperwork)
+		\end{listblock}
 		\begin{figure}
 			\centering
-			\includegraphics[width=.45\textwidth]{img/scrum-process.png}
-			\caption{scrum process overview}
+			\includegraphics[width=.45\textwidth]{img/scrum-rugby.jpg}
+			\caption{origin of the name ``Scrum''}
 		\end{figure}
 	\end{multicols}
 \end{tframe}
 
 \begin{tframe}[- how it supports PMC]
-	\begin{block}{Regular meetings}
-		\begin{itemize}
-			\item \strong{Sprint planning meeting} (part 1: whole team): 
-				\begin{itemize}
-					\item clean product backlog, prioritize entries
-					\item choose entries for next sprint
-				\end{itemize}
-			\item \strong{Sprint planning meeting} (part 2: developers):
-				\begin{itemize}
-					\item convert entries to 1-day tasks ($\Rightarrow$ sprint backlog)
-					\item extract sprint-goal from entries
-				\end{itemize}
-			\item \strong{Sprint Review}:
-				\begin{itemize}
-					\item present product to product owner, check sprint-goal
-					\item give feedback for last sprint, update product backlog
-				\end{itemize}
-			\item \strong{Sprint Retrospective}:
-				\begin{itemize}
-					\item concrete improvements based on
-					\item feedback for the last sprint
-				\end{itemize}
-		\end{itemize}
-	\end{block}
+	\begin{listblock}{Regular meetings}
+		\item \strong{Sprint planning meeting} (part 1: whole team): 
+			\begin{itemize}
+				\item clean product backlog, prioritize entries
+				\item choose entries for next sprint
+			\end{itemize}
+		\item \strong{Sprint planning meeting} (part 2: developers):
+			\begin{itemize}
+				\item convert entries to 1-day tasks ($\Rightarrow$ sprint backlog)
+				\item extract sprint-goal from entries
+			\end{itemize}
+		\item \strong{Sprint Review}:
+			\begin{itemize}
+				\item present product to product owner, check sprint-goal
+				\item give feedback for last sprint, update product backlog
+			\end{itemize}
+		\item \strong{Sprint Retrospective}:
+			\begin{itemize}
+				\item concrete improvements based on
+				\item feedback for the last sprint
+			\end{itemize}
+	\end{listblock}
 \end{tframe}
 
-\begin{tframe}[]
+\begin{tframe}
 	\begin{multicols}{2}
 		\begin{figure}
 			\centering
@@ -341,21 +352,17 @@
 % ----- extreme programming ---------------------------------------------------------
 \subsection{Extreme Programming}
 \begin{tframe}[- what it is]
-	\begin{block}{Overview}
-		\begin{itemize}
-			\item \strong{agile} software-engineering process
-			\item strong \strong{principles}: Pair Programming, Test-driven Development, Continuous Integration, \dots
-		\end{itemize}
-	\end{block}
+	\begin{listblock}{Overview}
+		\item \strong{agile} software-engineering process
+		\item strong \strong{principles}: Pair Programming, Test-driven Development, Continuous Integration, \dots
+	\end{listblock}
 	\pause
-	\begin{block}{Differences to Scrum}
-		\begin{itemize}
-			\item \strong{iteration length}: week (XP) $\leftrightarrow$ month (Scrum)
-			\item \strong{change adaption}: always (XP) $\leftrightarrow$ not in current sprint (Scrum)
-			\item \strong{work order}: customer chooses (XP) $\leftrightarrow$ team chooses (Scrum)
-			\item \strong{engineering practices}: given (XP) $\leftrightarrow$ not given (Scrum)
-		\end{itemize}
-	\end{block}
+	\begin{listblock}{Differences to Scrum}
+		\item \strong{iteration length}: week (XP) $\leftrightarrow$ month (Scrum)
+		\item \strong{change adaption}: always (XP) $\leftrightarrow$ not in current sprint (Scrum)
+		\item \strong{work order}: customer chooses (XP) $\leftrightarrow$ team chooses (Scrum)
+		\item \strong{engineering practices}: given (XP) $\leftrightarrow$ not given (Scrum)
+	\end{listblock}
 \end{tframe}
 
 \begin{tframe}[- how it supports PMC]
@@ -380,20 +387,16 @@
 \subsection{methodology-independent representations of progress}
 \begin{tframe}
 	\begin{multicols}{2}
-		\begin{block}{gantt chart}
-			\begin{itemize}
-				\item illustrates project \strong{schedule}
-				\item project is broken down into elements
-				\item each element has \strong{start} and \strong{end}
-				\item progress of each element can be illustrated
-			\end{itemize}
-		\end{block}
-		\begin{block}{network diagram}
-			\begin{itemize}
-				\item shows \strong{dependencies} in schedule
-				\item same information as gantt chart, different representation
-			\end{itemize}
-		\end{block}
+		\begin{listblock}{gantt chart}
+			\item illustrates project \strong{schedule}
+			\item project is broken down into elements
+			\item each element has \strong{start} and \strong{end}
+			\item progress of each element can be illustrated
+		\end{listblock}
+		\begin{listblock}{network diagram}	
+			\item shows \strong{dependencies} in schedule
+			\item same information as gantt chart, different representation
+		\end{listblock}
 		\begin{figure}
 			\centering
 			\includegraphics[width=.35\textwidth]{img/gantt-chart.png}\\\vspace{.3cm}
@@ -412,70 +415,54 @@
 			\includegraphics[width=.45\textwidth]{img/earned-value-analysis.png}
 			\caption{combined values in EVA}
 		\end{figure}
-		\begin{block}{project controlling tool}
-			\begin{itemize}
-				\item allows \strong{monitoring} of \emph{scope}, \emph{schedule} and \emph{cost} of a project
-				\item allows \strong{forecasts} for the evolving project
-				\item not restricted to software engineering, works for \strong{all kinds of projects}
-			\end{itemize}
-		\end{block}
+		\begin{listblock}{project controlling tool}
+			\item allows \strong{monitoring} of \emph{scope}, \emph{schedule} and \emph{cost} of a project
+			\item allows \strong{forecasts} for the evolving project
+			\item not restricted to software engineering, works for \strong{all kinds of projects}
+		\end{listblock}
 	\end{multicols}
 \end{tframe}
 
 \begin{tframe}[- how it works]
 	\begin{multicols}{2}
-		\begin{block}{measured values}
-			\begin{itemize}
-				\item \strong{planned cost} (\emph{PC}): pre-defined cost for the \emph{whole project}
-				\item \strong{actual cost} (\emph{AC)}: actual cost \emph{until now}
-			\end{itemize}
-		\end{block}
-		\begin{block}{metrics}
-			\begin{itemize}
-				\item \strong{earned value} (\emph{EV}): actual \emph{value} of the work until now\\{\scriptsize simple metric: $EV = Budget \cdot \%Progress$}
-			\end{itemize}
-		\end{block}
-		\begin{block}{derived values}
-			\begin{itemize}
-				\item \strong{schedule variance}:\\$SV = EV - PC$
-				\item \strong{cost variance}:\\$CV = EV - AC$
-				\item \strong{schedule performance index}:\\$SPI = \frac{EV}{PC}$
-				\item \strong{cost performance index}:\\$CPI = \frac{EV}{AC}$
-			\end{itemize}
-		\end{block}
+		\begin{listblock}{measured values}
+			\item \strong{planned cost} (\emph{PC}): pre-defined cost for the \emph{whole project}
+			\item \strong{actual cost} (\emph{AC)}: actual cost \emph{until now}
+		\end{listblock}
+		\begin{listblock}{metrics}
+			\item \strong{earned value} (\emph{EV}): actual \emph{value} of the work until now\\{\scriptsize simple metric: $EV = Budget \cdot \%Progress$}
+		\end{listblock}
+		\begin{listblock}{derived values}
+			\item \strong{schedule variance}:\\$SV = EV - PC$
+			\item \strong{cost variance}:\\$CV = EV - AC$
+			\item \strong{schedule performance index}:\\$SPI = \frac{EV}{PC}$
+			\item \strong{cost performance index}:\\$CPI = \frac{EV}{AC}$
+		\end{listblock}
 	\end{multicols}
 \end{tframe}
 
 \begin{tframe}[- example]
 	\begin{multicols}{2}
-		\begin{block}{your task}
-			\begin{itemize}
-				\item list of \strong{500} hand-written mail addresses
-				\item insert this into \strong{mailing list}
-				\item you need \strong{2h} for this, get \strong{10\euro{/h}}
-				\item \strong{half time!} 1h left
-			\end{itemize}
-		\end{block}
-		\begin{block}{measured values}
-			\begin{itemize}
-				\item \strong{PC} = $20\matheuro \cdot \frac{1}{2} = 10\matheuro$
-				\item \strong{AC} = $10\frac{\matheuro}{1h} \cdot 1h = 10\matheuro$
-			\end{itemize}
-		\end{block}
-		\begin{block}{metrics}
-			\begin{itemize}
-				\item you were \strong{fast}! Did 300 already!
-				\item \strong{EV} = $20\matheuro \cdot \frac{300}{500} = 12\matheuro$
-			\end{itemize}
-		\end{block}
-		\begin{block}{derived values}
-			\begin{itemize}
-				\item \strong{SV} = $12\matheuro - 10\matheuro = 2\matheuro$
-				\item \strong{CV} = $12\matheuro - 10\matheuro = 2\matheuro$
-				\item \strong{SPI} = $\frac{12\matheuro}{10\matheuro} = 1.2$
-				\item \strong{CPI} = $\frac{12\matheuro}{10\matheuro} = 1.2$
-			\end{itemize}
-		\end{block}
+		\begin{listblock}{your task}
+			\item list of \strong{500} hand-written mail addresses
+			\item insert this into \strong{mailing list}
+			\item you need \strong{2h}, get \strong{\euro{20}} ($= 10\frac{\matheuro}{h}$)
+			\item \strong{half time!} 1h left
+		\end{listblock}
+		\begin{listblock}{measured values}
+			\item \strong{PC} = $20\matheuro \cdot \frac{1}{2} = 10\matheuro$
+			\item \strong{AC} = $10\frac{\matheuro}{h} \cdot 1h = 10\matheuro$
+		\end{listblock}
+		\begin{listblock}{metrics}
+			\item you were \strong{fast}! Did 300 already!
+			\item \strong{EV} = $20\matheuro \cdot \frac{300}{500} = 12\matheuro$
+		\end{listblock}
+		\begin{listblock}{derived values}
+			\item \strong{SV} = $12\matheuro - 10\matheuro = 2\matheuro$
+			\item \strong{CV} = $12\matheuro - 10\matheuro = 2\matheuro$
+			\item \strong{SPI} = $\frac{12\matheuro}{10\matheuro} = 1.2$
+			\item \strong{CPI} = $\frac{12\matheuro}{10\matheuro} = 1.2$
+		\end{listblock}
 	\end{multicols}
 	\pause
 	If you stay that fast, you'll finish \strong{20min early}. Means: you'll get \strong{\euro{3,30}} for free.
@@ -488,14 +475,12 @@
 \subsection{at openLearnWare}
 \begin{tframe}[- project overview]
 	\begin{multicols}{2}
-		\begin{block}{Project: material portal for students}
-			\begin{itemize}
-				\item webservice for lecture material
-				\item development started in spring 2010
-				\item team of 2 full-time employees, 5 HiWis
-				\item scrum-like project structure
-			\end{itemize}
-		\end{block}
+		\begin{listblock}{Project: lecture material for students}
+			\item webservice for lecture material
+			\item development started in spring 2010
+			\item team of 2 full-time employees, 5 HiWis
+			\item scrum-like project structure
+		\end{listblock}
 		\begin{figure}
 			\centering
 			\includegraphics[width=.45\textwidth]{img/olw-screenshot.png}
@@ -505,34 +490,23 @@
 \end{tframe}
 
 \begin{tframe}[- project structure]
-	\begin{multicols}{2}
-		\begin{figure}
-			\centering
-			\includegraphics[width=.45\textwidth, draft]{img/olw-taskboard.png} % TODO remove draft
-			\caption{taskboard, december-sprint}
-		\end{figure}
-		\begin{block}{team members}
-			\begin{itemize}
-				\item ``Intellectual head'' -- like Scrum's \strong{product owner}, responsible for all ``non-technical stuff''
-				\item ``Technical head'' -- like Scrum's \strong{scrum master}, responsible for all ``technical stuff''
-				\item 5 HiWis, working 8-20 hours a week -- the \strong{scrum team}
-			\end{itemize}
-		\end{block}
-	\end{multicols}
+	\begin{listblock}{team members}
+		\item ``Intellectual head'' -- like Scrum's \strong{product owner}, responsible for all ``non-technical stuff''
+		\item ``Technical head'' -- like Scrum's \strong{scrum master}, responsible for all ``technical stuff''
+		\item 5 HiWis, working 8-20 hours a week -- the \strong{scrum team}
+	\end{listblock}
 \end{tframe}
 
 \begin{tframe}[- project monitoring/control]
 	\begin{multicols}{2}
-		\begin{block}{process items}
-			\begin{itemize}
-				\item weekly \strong{scrum meeting} -- about an hour, with all team members
-				\item weekly \strong{planning meeting} -- about 2 hours, intellectual+technical head
-				\item \strong{taskboard} as a mirror of the redmine \emph{ticket system}
-				\item \strong{tickets} as a \emph{sprint backlog}
-				\item current \strong{QSL-Request} as \emph{product backlog}
-				\item \strong{Jenkins} as \emph{Continuous-Integration Server}
-			\end{itemize}
-		\end{block}
+		\begin{listblock}{process items}
+			\item weekly \strong{scrum meeting} -- about an hour, with all team members
+			\item weekly \strong{planning meeting} -- about 2 hours, intellectual+technical head
+			\item \strong{taskboard} as a mirror of the redmine \emph{ticket system}
+			\item \strong{tickets} as a \emph{sprint backlog}
+			\item current \strong{QSL-Request} as \emph{product backlog}
+			\item \strong{Jenkins} as \emph{Continuous-Integration Server}
+		\end{listblock}
 		\begin{figure}
 			\centering
 			\includegraphics[width=.35\textwidth]{img/olw-redmine.png}\\
@@ -547,48 +521,75 @@
 		\begin{figure}
 			\centering
 			\includegraphics[height=.85\textheight]{img/olw-mindmap.pdf}
-			%\includegraphics[height=.85\textheight]{img/olw-mindmap-expanded.png}	
 			\caption{former product backlog}
 		\end{figure}
-		\begin{block}{change as the only constant}
-			\begin{itemize}
-				\item no current team member from the \strong{founder team}
-				\item began with \strong{giant mind-maps} as product/sprint backlogs
-				\item had 2-3 nearly \strong{complete restarts}
-				\item in the beginning: \strong{no documentation} at all (except backlogs)
-			\end{itemize}
-		\end{block}
+		\begin{listblock}{change as the only constant}
+			\item no current team member from the \strong{founder team}
+			\item began with \strong{giant mind-maps} as product/sprint backlogs
+			\item had 2-3 nearly \strong{complete restarts}
+			\item in the beginning: \strong{no documentation} at all (except backlogs)
+		\end{listblock}
 	\end{multicols}
 \end{tframe}
 
 % ----- dimetis GmbH ---------------------------------------------------------------
 \subsection{at dimetis GmbH}
 \begin{tframe}
+	\begin{listblock}{Project: broadcasting software for major carriers}
+		\item developing with \strong{multiple Scrum teams} on one project
+		\item \strong{adapted Scrum} to fit to multiple teams:
+			\begin{itemize}
+				\item \strong{Scrum master}: assigned by head of engineering, could be any developer
+				\item \strong{architecture}: \emph{raw design} is made before assigning tasks to backlogs, design changes are discussed with all scrum masters (+ overall design documentation)
+				\item \strong{code ownership}: component/module-based with backup owners, code changes are discussed with owner
+				\item \strong{assignments}: task$\rightarrow$team: close related requirements to the same team, person$\rightarrow$team: engineering head+scrum masters assign teams
+			\end{itemize}
+	\end{listblock}
+\end{tframe}
 
+\begin{tframe}
+	\begin{multicols}{2}
+		\begin{listblock}{a single Scrum team}
+			\item 2-3 Developers + QA
+			\item 1-5 Sprints per Scrum
+			\item 2-4 Weeks per Sprint
+			\item same svn for all teams, branches for single team
+		\end{listblock}
+		\begin{figure}
+			\centering
+			\includegraphics[width=.45\textwidth]{img/dimetis-taskboard.png}
+			\caption{scrum taskboard at dimetis}
+		\end{figure}
+	\end{multicols}
+\end{tframe}
+
+\begin{tframe}
+	\begin{block}{conclusion at dimetis}
+		\vspace{1cm}
+		\begin{quote}
+			Scrum has interesting approaches that allow reaching high cmmi-levels \textnormal{in theory}. In practice, the goal of putting as less \textnormal{overhead} as possible on the developers stands against this.
+		\end{quote}
+	\end{block}
 \end{tframe}
 
 % ----- major-client software-engineering company ----------------------------------
 \subsection{at a major-client software-engineering company}
 \begin{tframe}
-	\begin{block}{Project: Web-based software for the government}
-		\begin{itemize}
-			\item up to 1.5 years \strong{specification phase}
-			\item teams of \strong{<10 members}
-			\item project head spends \strong{1 day a week} with the customer
-		\end{itemize}
-	\end{block}
+	\begin{listblock}{Project: Web-based software for the government}
+		\item up to 1.5 years \strong{specification phase}
+		\item teams of \strong{<10 members}
+		\item project head spends \strong{1 day a week} with the customer
+	\end{listblock}
 \end{tframe}
 
 \begin{tframe}
-	\begin{block}{the process}
-		\begin{itemize}
-			\item \strong{specification phase}: before the project starts, it gets strongly \emph{specified} (customer reviews this)
-			\item \strong{implementation}: according to system specification, features are implemented
-			\item \strong{internal reviews}: code is reviewed twice: once technical, once specialist
-			\item \strong{small releases}: working features are shipped to the customer early, loaded with unit tests/performance tests/specific tests
-			\item \strong{issue tracking}: customer show occuring bugs to developers or reports them in the issue tracker
-		\end{itemize}
-	\end{block}
+	\begin{listblock}{the process}
+		\item \strong{specification phase}: before the project starts, it gets strongly \emph{specified} (customer reviews this)
+		\item \strong{implementation}: according to system specification, features are implemented
+		\item \strong{internal reviews}: code is reviewed twice: once technical, once specialist
+		\item \strong{small releases}: working features are shipped to the customer early, loaded with unit tests/performance tests/specific tests
+		\item \strong{issue tracking}: customer show occuring bugs to developers or reports them in the issue tracker
+	\end{listblock}
 \end{tframe}
 
 % ===== post-presentation ==========================================================
@@ -597,7 +598,7 @@
 \pause
 \vspace{1cm}
 
-I want to hear at least \strong{3 questions} from you.
+I want to hear at least {\huge\strong{3 questions}} from you.
 \vspace{1cm}
 
 \noindent{\huge Start now!}
@@ -612,38 +613,30 @@ I want to hear at least \strong{3 questions} from you.
 \end{frame}
 
 % ===== backup slides ==============================================================
-\begin{frame}{Extreme Programming\\\strong{Principles}}
+\begin{frame}{More about Extreme Programming:\\\strong{the Principles}}
 \label{fr:xp-principles}
 	\begin{multicols}{2}
-		\begin{block}{Fine scale feedback}
-			\begin{itemize}
-				\item pair programming
-				\item planning game
-				\item test-driven development
-				\item whole team
-			\end{itemize}
-		\end{block}
-		\begin{block}{continuous process}
-			\begin{itemize}
-				\item continuous integration
-				\item refactoring/design improvement
-				\item small releases
-			\end{itemize}
-		\end{block}
-		\begin{block}{shared understanding}
-			\begin{itemize}
-				\item coding standards
-				\item collective code ownership
-				\item simple design
-				\item system metaphor
-			\end{itemize}
-		\end{block}
-		\begin{block}{programmer welfare}
-			\begin{itemize}
-				\item sustainable pace
-			\end{itemize}
+		\begin{listblock}{Fine scale feedback}
+			\item pair programming
+			\item planning game
+			\item test-driven development
+			\item whole team
+		\end{listblock}
+		\begin{listblock}{continuous process}
+			\item continuous integration
+			\item refactoring/design improvement
+			\item small releases
+		\end{listblock}
+		\begin{listblock}{shared understanding}
+			\item coding standards
+			\item collective code ownership
+			\item simple design
+			\item system metaphor
+		\end{listblock}
+		\begin{listblock}{programmer welfare}
+			\item sustainable pace
 			\vspace{1cm}
-		\end{block}
+		\end{listblock}
 	\end{multicols}	
 \end{frame}
 
